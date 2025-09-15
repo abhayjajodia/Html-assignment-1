@@ -1,0 +1,121 @@
+/* Core Styling - Shared among all pages */
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #e0e0e0;
+    background-color: #0b1a2b;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #12243d;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    border-bottom: 2px solid #33cc33;
+}
+
+.site-logo {
+    background-color: transparent;
+    padding: 10px 20px;
+    font-weight: 700;
+    color: #ffc800;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #a0a0b0;
+    font-weight: 400;
+    transition: color 0.3s;
+    font-size: 1.1em;
+}
+
+.nav-links a:hover {
+    color: #33cc33;
+}
+
+.text-section {
+    padding: 60px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.text-section p {
+    line-height: 1.8;
+    color: #a0a0b0;
+    font-size: 1.1em;
+}
+
+/* Index Page Specific Styles */
+.hero-section {
+    position: relative;
+    /* Removed fixed height to allow content to dictate height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b1a2b;
+    overflow: hidden;
+    text-align: center;
+    padding: 0 20px 40px; /* Added bottom padding to space out the section */
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(51,204,51,0.15) 0%, rgba(11,26,43,1) 70%);
+    z-index: 0;
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(255,200,0,0.15) 0%, rgba(11,26,43,0) 50%);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 4.5em;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px #33cc33, 0 0 20px #33cc33;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.hero-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 900px; /* Set a max width to prevent it from getting too large */
+    object-fit: cover;
+    border: 2px solid #ffc800;
+    box-shadow: 0 0 20px rgba(255, 200, 0, 0.5); /* Added a box-shadow for visual flair */
+    margin-top: 20px; /* Added margin to separate it from the title */
+}

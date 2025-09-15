@@ -1,0 +1,133 @@
+/* Core Styling - Shared among all pages */
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #e0e0e0;
+    background-color: #0b1a2b; /* Dark navy blue background */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #12243d; /* Darker blue for contrast */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    border-bottom: 2px solid #33cc33; /* Electric green border */
+}
+
+.site-logo {
+    background-color: transparent;
+    padding: 10px 20px;
+    font-weight: 700;
+    color: #ffc800; /* Vibrant yellow */
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #a0a0b0;
+    font-weight: 400;
+    transition: color 0.3s;
+    font-size: 1.1em;
+}
+
+.nav-links a:hover {
+    color: #33cc33; /* Highlight with electric green */
+}
+
+/* Contact Page Specific Styles */
+.contact-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically centers content */
+    padding: 50px;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: #1a2e46; /* Container background color */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 200, 0, 0.5); /* Glowing effect */
+}
+
+/* Background circles to match the image */
+.contact-page-container::before,
+.contact-page-container::after {
+    content: '';
+    position: absolute;
+    background: radial-gradient(circle, rgba(51,204,51,0.15) 0%, rgba(11,26,43,0) 50%); /* Electric green glow */
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.contact-page-container::before {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    left: -200px;
+    transform: rotate(-30deg);
+}
+
+.contact-page-container::after {
+    width: 400px;
+    height: 400px;
+    bottom: -150px;
+    right: -100px;
+    background: radial-gradient(circle, rgba(255,200,0,0.15) 0%, rgba(11,26,43,0) 50%); /* Vibrant yellow glow */
+    transform: rotate(60deg);
+}
+
+.contact-info {
+    position: relative;
+    z-index: 1;
+    flex-basis: 40%;
+    padding: 20px;
+}
+
+.contact-info .contact-title {
+    font-size: 4em;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px #33cc33, 0 0 20px #33cc33;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    line-height: 1.6;
+    color: #a0a0b0;
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: #ffc800;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    color: #33cc33;
+}
+
+.map-placeholder {
+    position: relative;
+    z-index: 1;
+    flex-basis: 60%;
+    background-color: #1a2e46;
+    border: 2px solid #33cc33;
+    box-shadow: 0 0 15px rgba(51, 204, 51, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a0a0b0;
+    font-size: 2em;
+    font-weight: bold;
+    height: 400px;
+    width: fit-content;
+}
