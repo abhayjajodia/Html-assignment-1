@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment 1</title>
+</head>
+<body>
+  <script>
+    // Question 1: Log text to console
+    console.log("I'm printing to console!");
+
+    // Question 2: Ask for user's name and greet
+    let name = prompt("What is your name?");
+    document.write("Hello, " + name + "!<br>");
+
+    // Question 3: Prompt for three integers and print sum, product, average
+    let a = parseInt(prompt("Enter first integer:"));
+    let b = parseInt(prompt("Enter second integer:"));
+    let c = parseInt(prompt("Enter third integer:"));
+    let sum = a + b + c;
+    let product = a * b * c;
+    let average = sum / 3;
+    document.write("Sum: " + sum + "<br>");
+    document.write("Product: " + product + "<br>");
+    document.write("Average: " + average + "<br>");
+
+    // Question 4: Electronic sorting hat
+    let studentName = prompt("Enter your name for sorting hat:");
+    let randomNum = Math.floor(Math.random() * 4) + 1;
+    let house;
+    if (randomNum === 1) {
+      house = "Gryffindor";
+    } else if (randomNum === 2) {
+      house = "Slytherin";
+    } else if (randomNum === 3) {
+      house = "Hufflepuff";
+    } else {
+      house = "Ravenclaw";
+    }
+    document.write(studentName + ", you are " + house + ".<br>");
+
+    // Question 5: Check if a year is a leap year
+    let year = parseInt(prompt("Enter a year:"));
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+      document.write(year + " is a leap year.<br>");
+    } else {
+      document.write(year + " is not a leap year.<br>");
+    }
+
+    // Question 6: Calculate square root based on user confirmation
+    if (confirm("Should I calculate the square root?")) {
+      let num = parseFloat(prompt("Enter a number:"));
+      if (num < 0) {
+        document.write("The square root of a negative number is not defined.<br>");
+      } else {
+        document.write("The square root of " + num + " is " + Math.sqrt(num) + ".<br>");
+      }
+    } else {
+      document.write("The square root is not calculated.<br>");
+    }
+
+    // Question 7: Roll user-defined number of dice and display sum
+    let diceCount = parseInt(prompt("Enter number of dice rolls:"));
+    let diceSum = 0;
+    for (let i = 0; i < diceCount; i++) {
+      diceSum += Math.floor(Math.random() * 6) + 1;
+    }
+    document.write("The sum of dice rolls is " + diceSum + ".<br>");
+
+    // Question 8: Print all leap years between given interval
+    let startYear = parseInt(prompt("Enter start year:"));
+    let endYear = parseInt(prompt("Enter end year:"));
+    document.write("<ul>");
+    for (let y = startYear; y <= endYear; y++) {
+      if ((y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0)) {
+        document.write("<li>" + y + "</li>");
+      }
+    }
+    document.write("</ul>");
+
+    // Question 9: Check if a number is a prime number
+    let numCheck = parseInt(prompt("Enter an integer:"));
+    let isPrime = true;
+    if (numCheck <= 1) {
+      isPrime = false;
+    } else {
+      for (let i = 2; i <= Math.sqrt(numCheck); i++) {
+        if (numCheck % i === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+    }
+    if (isPrime) {
+      document.write(numCheck + " is a prime number.<br>");
+    } else {
+      document.write(numCheck + " is not a prime number.<br>");
+    }
+
+    // Question: Dice probability simulation using Monte Carlo method
+    let diceCount1 = parseInt(prompt("Enter number of dice:"));
+    let desiredSum = parseInt(prompt("Enter desired sum:"));
+    let simulations = 10000;
+    let successCount = 0;
+
+    for (let i = 0; i < simulations; i++) {
+      let total = 0;
+      for (let j = 0; j < diceCount1; j++) {
+        total += Math.floor(Math.random() * 6) + 1;
+      }
+      if (total === desiredSum) {
+        successCount++;
+      }
+    }
+
+    let probability = (successCount / simulations) * 100;
+    document.write(
+      "Probability to get sum " + desiredSum +
+      " with " + diceCount1 + " dice is " +
+      probability.toFixed(2) + "%."
+    );
+  </script>
+</body>
+</html>
