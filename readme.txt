@@ -1,4 +1,4 @@
-Link for the webdisk - https://users.metropolia.fi/~abhayj/javascript_assignment/
+**Link for the webdisk** - https://users.metropolia.fi/~abhayj/javascript_assignment/
 
 
 All the question from module 1 and module 2 are answered with pints of 27 and 29
